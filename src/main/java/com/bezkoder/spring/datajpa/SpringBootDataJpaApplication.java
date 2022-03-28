@@ -18,7 +18,7 @@ public class SpringBootDataJpaApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/tutorials").allowedOriginPatterns("http://localhost:[*]");
+                registry.addMapping("/data/**").allowedOriginPatterns("http://localhost:[*]");
             }
         };
     }

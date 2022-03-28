@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 abstract class CommonFields {
 
     static String type = "object";
@@ -88,15 +89,15 @@ abstract class CommonFields {
         return retrievedTime;
     }
 
-    public Timestamp getStartTimeTime() {
+    public Timestamp getStartTime() {
         return startTime;
     }
 
-    public Timestamp getEndTimeTime() {
+    public Timestamp getEndTime() {
         return endTime;
     }
 
-    public Timestamp getLastVisitTimeTime() {
+    public Timestamp getLastVisitTime() {
         return lastVisitTime;
     }
 
@@ -128,15 +129,15 @@ abstract class CommonFields {
         this.retrievedTime = retrievedTime;
     }
 
-    public void setStartTimeTime(Timestamp startTime) {
+    public void setStartTime(Timestamp startTime) {
         this.startTime = startTime;
     }
 
-    public void setEndTimeTime(Timestamp endTime) {
+    public void setEndTime(Timestamp endTime) {
         this.endTime = endTime;
     }
 
-    public void setLastVisitTimeTime(Timestamp lastVisitTime) {
+    public void setLastVisitTime(Timestamp lastVisitTime) {
         this.lastVisitTime = lastVisitTime;
     }
 
